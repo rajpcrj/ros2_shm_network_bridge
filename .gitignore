@@ -1,0 +1,31 @@
+# ---- colcon / ament build artifacts (never commit) ----
+build/
+install/
+log/
+
+# ---- large test assets (not source) ----
+TEST_CASES/
+
+# ---- generated message-schema dump (regenerate with generate_index.py) ----
+# Keep the script, classification lists, and index.json; drop the bulky
+# mirrored per-package .msg tree (regenerable on any ROS install).
+src/message_type/*/
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# ---- runtime shared-memory leftovers (if ever copied in) ----
+*_frame
+*_header
+*_recipe.json

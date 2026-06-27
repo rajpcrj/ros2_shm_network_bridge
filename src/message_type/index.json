@@ -1,0 +1,7979 @@
+{
+  "ackermann_msgs/msg/AckermannDrive": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "steering_angle",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "steering_angle_velocity",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "speed",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "acceleration",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "jerk",
+        "type": "float32"
+      }
+    ]
+  },
+  "ackermann_msgs/msg/AckermannDriveStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "drive",
+        "type": "AckermannDrive"
+      }
+    ]
+  },
+  "action_msgs/msg/GoalInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "goal_id",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": false,
+        "name": "stamp",
+        "type": "builtin_interfaces/Time"
+      }
+    ]
+  },
+  "action_msgs/msg/GoalStatus": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "goal_info",
+        "type": "GoalInfo"
+      },
+      {
+        "array": false,
+        "name": "status",
+        "type": "int8"
+      }
+    ]
+  },
+  "action_msgs/msg/GoalStatusArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "status_list",
+        "type": "GoalStatus"
+      }
+    ]
+  },
+  "actionlib_msgs/msg/GoalID": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "stamp",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      }
+    ]
+  },
+  "actionlib_msgs/msg/GoalStatus": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "goal_id",
+        "type": "GoalID"
+      },
+      {
+        "array": false,
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "text",
+        "type": "string"
+      }
+    ]
+  },
+  "actionlib_msgs/msg/GoalStatusArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "status_list",
+        "type": "GoalStatus"
+      }
+    ]
+  },
+  "actuator_msgs/msg/Actuators": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "velocity",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "normalized",
+        "type": "float64"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsAngularPosition": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "position",
+        "type": "float64"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsAngularVelocity": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "velocity",
+        "type": "float64"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsLinearPosition": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "position",
+        "type": "float64"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsLinearVelocity": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "velocity",
+        "type": "float64"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsNormalized": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "normalized",
+        "type": "float64"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsPosition": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "angular",
+        "type": "ActuatorsAngularPosition"
+      },
+      {
+        "array": false,
+        "name": "linear",
+        "type": "ActuatorsLinearPosition"
+      }
+    ]
+  },
+  "actuator_msgs/msg/ActuatorsVelocity": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "angular",
+        "type": "ActuatorsAngularVelocity"
+      },
+      {
+        "array": false,
+        "name": "linear",
+        "type": "ActuatorsLinearVelocity"
+      }
+    ]
+  },
+  "builtin_interfaces/msg/Duration": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "sec",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "nanosec",
+        "type": "uint32"
+      }
+    ]
+  },
+  "builtin_interfaces/msg/Time": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "sec",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "nanosec",
+        "type": "uint32"
+      }
+    ]
+  },
+  "canopen_interfaces/msg/COData": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "index",
+        "type": "uint16"
+      },
+      {
+        "array": false,
+        "name": "subindex",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "data",
+        "type": "uint32"
+      }
+    ]
+  },
+  "control_msgs/msg/AdmittanceControllerState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "mass",
+        "type": "std_msgs/Float64MultiArray"
+      },
+      {
+        "array": false,
+        "name": "damping",
+        "type": "std_msgs/Float64MultiArray"
+      },
+      {
+        "array": false,
+        "name": "stiffness",
+        "type": "std_msgs/Float64MultiArray"
+      },
+      {
+        "array": false,
+        "name": "rot_base_control",
+        "type": "geometry_msgs/Quaternion"
+      },
+      {
+        "array": false,
+        "name": "ref_trans_base_ft",
+        "type": "geometry_msgs/TransformStamped"
+      },
+      {
+        "array": false,
+        "name": "selected_axes",
+        "type": "std_msgs/Int8MultiArray"
+      },
+      {
+        "array": false,
+        "name": "ft_sensor_frame",
+        "type": "std_msgs/String"
+      },
+      {
+        "array": false,
+        "name": "admittance_position",
+        "type": "geometry_msgs/TransformStamped"
+      },
+      {
+        "array": false,
+        "name": "admittance_acceleration",
+        "type": "geometry_msgs/TwistStamped"
+      },
+      {
+        "array": false,
+        "name": "admittance_velocity",
+        "type": "geometry_msgs/TwistStamped"
+      },
+      {
+        "array": false,
+        "name": "wrench_base",
+        "type": "geometry_msgs/WrenchStamped"
+      },
+      {
+        "array": false,
+        "name": "joint_state",
+        "type": "sensor_msgs/JointState"
+      }
+    ]
+  },
+  "control_msgs/msg/DynamicInterfaceGroupValues": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "interface_groups",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "interface_values",
+        "type": "InterfaceValue"
+      }
+    ]
+  },
+  "control_msgs/msg/DynamicJointState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "interface_values",
+        "type": "InterfaceValue"
+      }
+    ]
+  },
+  "control_msgs/msg/GripperCommand": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_effort",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/InterfaceValue": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "interface_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "values",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/JointComponentTolerance": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "joint_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "component",
+        "type": "uint16"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "acceleration",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/JointControllerState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "set_point",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "process_value",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "process_value_dot",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "error",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "time_step",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "command",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "p",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "i",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "d",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "i_clamp",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "antiwindup",
+        "type": "bool"
+      }
+    ]
+  },
+  "control_msgs/msg/JointJog": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "displacements",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "velocities",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "duration",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/JointTolerance": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "acceleration",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/JointTrajectoryControllerState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "reference",
+        "type": "trajectory_msgs/JointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "feedback",
+        "type": "trajectory_msgs/JointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "error",
+        "type": "trajectory_msgs/JointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "output",
+        "type": "trajectory_msgs/JointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "desired",
+        "type": "trajectory_msgs/JointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "actual",
+        "type": "trajectory_msgs/JointTrajectoryPoint"
+      },
+      {
+        "array": true,
+        "name": "multi_dof_joint_names",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_reference",
+        "type": "trajectory_msgs/MultiDOFJointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_feedback",
+        "type": "trajectory_msgs/MultiDOFJointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_error",
+        "type": "trajectory_msgs/MultiDOFJointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_output",
+        "type": "trajectory_msgs/MultiDOFJointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_desired",
+        "type": "trajectory_msgs/MultiDOFJointTrajectoryPoint"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_actual",
+        "type": "trajectory_msgs/MultiDOFJointTrajectoryPoint"
+      }
+    ]
+  },
+  "control_msgs/msg/MecanumDriveControllerState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "front_left_wheel_velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "back_left_wheel_velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "back_right_wheel_velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "front_right_wheel_velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "reference_velocity",
+        "type": "geometry_msgs/Twist"
+      }
+    ]
+  },
+  "control_msgs/msg/MultiDOFCommand": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "dof_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "values",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "values_dot",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/MultiDOFStateStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "dof_states",
+        "type": "SingleDOFState"
+      }
+    ]
+  },
+  "control_msgs/msg/PidState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "timestep",
+        "type": "builtin_interfaces/Duration"
+      },
+      {
+        "array": false,
+        "name": "error",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "error_dot",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "p_error",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "i_error",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "d_error",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "p_term",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "i_term",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "d_term",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "i_max",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "i_min",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "output",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/SingleDOFState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "reference",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "feedback",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "feedback_dot",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "error",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "error_dot",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "time_step",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "output",
+        "type": "float64"
+      }
+    ]
+  },
+  "control_msgs/msg/SingleDOFStateStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "dof_state",
+        "type": "SingleDOFState"
+      }
+    ]
+  },
+  "control_msgs/msg/SteeringControllerStatus": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "traction_wheels_position",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "traction_wheels_velocity",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "steer_positions",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "linear_velocity_command",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "steering_angle_command",
+        "type": "float64"
+      }
+    ]
+  },
+  "controller_manager_msgs/msg/ChainConnection": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "reference_interfaces",
+        "type": "string"
+      }
+    ]
+  },
+  "controller_manager_msgs/msg/ControllerState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "state",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "claimed_interfaces",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "required_command_interfaces",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "required_state_interfaces",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "is_chainable",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "is_chained",
+        "type": "bool"
+      },
+      {
+        "array": true,
+        "name": "reference_interfaces",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "chain_connections",
+        "type": "ChainConnection"
+      }
+    ]
+  },
+  "controller_manager_msgs/msg/HardwareComponentState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "class_type",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "state",
+        "type": "lifecycle_msgs/State"
+      },
+      {
+        "array": true,
+        "name": "command_interfaces",
+        "type": "HardwareInterface"
+      },
+      {
+        "array": true,
+        "name": "state_interfaces",
+        "type": "HardwareInterface"
+      }
+    ]
+  },
+  "controller_manager_msgs/msg/HardwareInterface": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "is_available",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "is_claimed",
+        "type": "bool"
+      }
+    ]
+  },
+  "diagnostic_msgs/msg/DiagnosticArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "status",
+        "type": "DiagnosticStatus"
+      }
+    ]
+  },
+  "diagnostic_msgs/msg/DiagnosticStatus": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "level",
+        "type": "byte"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "message",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "hardware_id",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "values",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "diagnostic_msgs/msg/KeyValue": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/ContactState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "info",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "collision1_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "collision2_name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "wrenches",
+        "type": "geometry_msgs/Wrench"
+      },
+      {
+        "array": false,
+        "name": "total_wrench",
+        "type": "geometry_msgs/Wrench"
+      },
+      {
+        "array": true,
+        "name": "contact_positions",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "contact_normals",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "depths",
+        "type": "float64"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/ContactsState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "states",
+        "type": "gazebo_msgs/ContactState"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/EntityState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": false,
+        "name": "reference_frame",
+        "type": "string"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/LinkState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": false,
+        "name": "reference_frame",
+        "type": "string"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/LinkStates": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/ModelState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "model_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": false,
+        "name": "reference_frame",
+        "type": "string"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/ModelStates": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/ODEJointProperties": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "damping",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "hi_stop",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "lo_stop",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "erp",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "cfm",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "stop_erp",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "stop_cfm",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "fudge_factor",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "fmax",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "vel",
+        "type": "float64"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/ODEPhysics": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "auto_disable_bodies",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "sor_pgs_precon_iters",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "sor_pgs_iters",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "sor_pgs_w",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "sor_pgs_rms_error_tol",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "contact_surface_layer",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "contact_max_correcting_vel",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "cfm",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "erp",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_contacts",
+        "type": "uint32"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/PerformanceMetrics": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "real_time_factor",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "sensors",
+        "type": "gazebo_msgs/SensorPerformanceMetric"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/SensorPerformanceMetric": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "sim_update_rate",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "real_update_rate",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "fps",
+        "type": "float64"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/WheelSlip": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "lateral_slip",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "longitudinal_slip",
+        "type": "float64"
+      }
+    ]
+  },
+  "gazebo_msgs/msg/WorldState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": true,
+        "name": "wrench",
+        "type": "geometry_msgs/Wrench"
+      }
+    ]
+  },
+  "geographic_msgs/msg/BoundingBox": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "min_pt",
+        "type": "GeoPoint"
+      },
+      {
+        "array": false,
+        "name": "max_pt",
+        "type": "GeoPoint"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPath": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "poses",
+        "type": "geographic_msgs/GeoPoseStamped"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "latitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "longitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "altitude",
+        "type": "float64"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPointStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "geographic_msgs/GeoPoint"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPose": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "position",
+        "type": "GeoPoint"
+      },
+      {
+        "array": false,
+        "name": "orientation",
+        "type": "geometry_msgs/Quaternion"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPoseStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geographic_msgs/GeoPose"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPoseWithCovariance": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "pose",
+        "type": "GeoPose"
+      },
+      {
+        "array": true,
+        "name": "covariance",
+        "type": "float64"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeoPoseWithCovarianceStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geographic_msgs/GeoPoseWithCovariance"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeographicMap": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": false,
+        "name": "bounds",
+        "type": "BoundingBox"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "WayPoint"
+      },
+      {
+        "array": true,
+        "name": "features",
+        "type": "MapFeature"
+      },
+      {
+        "array": true,
+        "name": "props",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "geographic_msgs/msg/GeographicMapChanges": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "diffs",
+        "type": "GeographicMap"
+      },
+      {
+        "array": true,
+        "name": "deletes",
+        "type": "unique_identifier_msgs/UUID"
+      }
+    ]
+  },
+  "geographic_msgs/msg/KeyValue": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  "geographic_msgs/msg/MapFeature": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": true,
+        "name": "components",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": true,
+        "name": "props",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "geographic_msgs/msg/RouteNetwork": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": false,
+        "name": "bounds",
+        "type": "BoundingBox"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "WayPoint"
+      },
+      {
+        "array": true,
+        "name": "segments",
+        "type": "RouteSegment"
+      },
+      {
+        "array": true,
+        "name": "props",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "geographic_msgs/msg/RoutePath": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "network",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": true,
+        "name": "segments",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": true,
+        "name": "props",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "geographic_msgs/msg/RouteSegment": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": false,
+        "name": "start",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": false,
+        "name": "end",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": true,
+        "name": "props",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "geographic_msgs/msg/WayPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "unique_identifier_msgs/UUID"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "GeoPoint"
+      },
+      {
+        "array": true,
+        "name": "props",
+        "type": "KeyValue"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Accel": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "linear",
+        "type": "Vector3"
+      },
+      {
+        "array": false,
+        "name": "angular",
+        "type": "Vector3"
+      }
+    ]
+  },
+  "geometry_msgs/msg/AccelStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "accel",
+        "type": "Accel"
+      }
+    ]
+  },
+  "geometry_msgs/msg/AccelWithCovariance": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "accel",
+        "type": "Accel"
+      },
+      {
+        "array": true,
+        "name": "covariance",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/AccelWithCovarianceStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "accel",
+        "type": "AccelWithCovariance"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Inertia": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "m",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "com",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "ixx",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "ixy",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "ixz",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "iyy",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "iyz",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "izz",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/InertiaStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "inertia",
+        "type": "Inertia"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Point": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "z",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Point32": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "z",
+        "type": "float32"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PointStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "point",
+        "type": "Point"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Polygon": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "points",
+        "type": "Point32"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PolygonInstance": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "polygon",
+        "type": "geometry_msgs/Polygon"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "int64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PolygonInstanceStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "polygon",
+        "type": "geometry_msgs/PolygonInstance"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PolygonStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "polygon",
+        "type": "Polygon"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Pose": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "position",
+        "type": "Point"
+      },
+      {
+        "array": false,
+        "name": "orientation",
+        "type": "Quaternion"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Pose2D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "theta",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PoseArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "poses",
+        "type": "Pose"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PoseStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "Pose"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PoseWithCovariance": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "pose",
+        "type": "Pose"
+      },
+      {
+        "array": true,
+        "name": "covariance",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/PoseWithCovarianceStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "PoseWithCovariance"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Quaternion": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "z",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "w",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/QuaternionStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "quaternion",
+        "type": "Quaternion"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Transform": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "translation",
+        "type": "Vector3"
+      },
+      {
+        "array": false,
+        "name": "rotation",
+        "type": "Quaternion"
+      }
+    ]
+  },
+  "geometry_msgs/msg/TransformStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "child_frame_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "transform",
+        "type": "Transform"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Twist": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "linear",
+        "type": "Vector3"
+      },
+      {
+        "array": false,
+        "name": "angular",
+        "type": "Vector3"
+      }
+    ]
+  },
+  "geometry_msgs/msg/TwistStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "twist",
+        "type": "Twist"
+      }
+    ]
+  },
+  "geometry_msgs/msg/TwistWithCovariance": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "twist",
+        "type": "Twist"
+      },
+      {
+        "array": true,
+        "name": "covariance",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/TwistWithCovarianceStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "twist",
+        "type": "TwistWithCovariance"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Vector3": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "z",
+        "type": "float64"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Vector3Stamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "vector",
+        "type": "Vector3"
+      }
+    ]
+  },
+  "geometry_msgs/msg/VelocityStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "body_frame_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "reference_frame_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "velocity",
+        "type": "Twist"
+      }
+    ]
+  },
+  "geometry_msgs/msg/Wrench": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "force",
+        "type": "Vector3"
+      },
+      {
+        "array": false,
+        "name": "torque",
+        "type": "Vector3"
+      }
+    ]
+  },
+  "geometry_msgs/msg/WrenchStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "wrench",
+        "type": "Wrench"
+      }
+    ]
+  },
+  "gps_msgs/msg/GPSFix": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "status",
+        "type": "GPSStatus"
+      },
+      {
+        "array": false,
+        "name": "latitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "longitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "altitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "track",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "speed",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "climb",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "pitch",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "roll",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "dip",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "time",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "gdop",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "pdop",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "hdop",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "vdop",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "tdop",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_horz",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_vert",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_track",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_speed",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_climb",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_time",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_pitch",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_roll",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "err_dip",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "position_covariance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "position_covariance_type",
+        "type": "uint8"
+      }
+    ]
+  },
+  "gps_msgs/msg/GPSStatus": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "satellites_used",
+        "type": "uint16"
+      },
+      {
+        "array": true,
+        "name": "satellite_used_prn",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "satellites_visible",
+        "type": "uint16"
+      },
+      {
+        "array": true,
+        "name": "satellite_visible_prn",
+        "type": "int32"
+      },
+      {
+        "array": true,
+        "name": "satellite_visible_z",
+        "type": "int32"
+      },
+      {
+        "array": true,
+        "name": "satellite_visible_azimuth",
+        "type": "int32"
+      },
+      {
+        "array": true,
+        "name": "satellite_visible_snr",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "status",
+        "type": "int16"
+      },
+      {
+        "array": false,
+        "name": "motion_source",
+        "type": "uint16"
+      },
+      {
+        "array": false,
+        "name": "orientation_source",
+        "type": "uint16"
+      },
+      {
+        "array": false,
+        "name": "position_source",
+        "type": "uint16"
+      }
+    ]
+  },
+  "graph_msgs/msg/Edges": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "node_ids",
+        "type": "uint32"
+      },
+      {
+        "array": true,
+        "name": "weights",
+        "type": "float64"
+      }
+    ]
+  },
+  "graph_msgs/msg/GeometryGraph": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "nodes",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": true,
+        "name": "edges",
+        "type": "Edges"
+      }
+    ]
+  },
+  "lifecycle_msgs/msg/State": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "label",
+        "type": "string"
+      }
+    ]
+  },
+  "lifecycle_msgs/msg/Transition": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "label",
+        "type": "string"
+      }
+    ]
+  },
+  "lifecycle_msgs/msg/TransitionDescription": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "transition",
+        "type": "Transition"
+      },
+      {
+        "array": false,
+        "name": "start_state",
+        "type": "State"
+      },
+      {
+        "array": false,
+        "name": "goal_state",
+        "type": "State"
+      }
+    ]
+  },
+  "lifecycle_msgs/msg/TransitionEvent": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "timestamp",
+        "type": "uint64"
+      },
+      {
+        "array": false,
+        "name": "transition",
+        "type": "Transition"
+      },
+      {
+        "array": false,
+        "name": "start_state",
+        "type": "State"
+      },
+      {
+        "array": false,
+        "name": "goal_state",
+        "type": "State"
+      }
+    ]
+  },
+  "map_msgs/msg/OccupancyGridUpdate": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "x",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "uint32"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int8"
+      }
+    ]
+  },
+  "map_msgs/msg/PointCloud2Update": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "points",
+        "type": "sensor_msgs/PointCloud2"
+      }
+    ]
+  },
+  "map_msgs/msg/ProjectedMap": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "map",
+        "type": "nav_msgs/OccupancyGrid"
+      },
+      {
+        "array": false,
+        "name": "min_z",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_z",
+        "type": "float64"
+      }
+    ]
+  },
+  "map_msgs/msg/ProjectedMapInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "frame_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "min_z",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_z",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/AllowedCollisionEntry": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "enabled",
+        "type": "bool"
+      }
+    ]
+  },
+  "moveit_msgs/msg/AllowedCollisionMatrix": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "entry_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "entry_values",
+        "type": "AllowedCollisionEntry"
+      },
+      {
+        "array": true,
+        "name": "default_entry_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "default_entry_values",
+        "type": "bool"
+      }
+    ]
+  },
+  "moveit_msgs/msg/AttachedCollisionObject": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "object",
+        "type": "CollisionObject"
+      },
+      {
+        "array": true,
+        "name": "touch_links",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "detach_posture",
+        "type": "trajectory_msgs/JointTrajectory"
+      },
+      {
+        "array": false,
+        "name": "weight",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/BoundingVolume": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "primitives",
+        "type": "shape_msgs/SolidPrimitive"
+      },
+      {
+        "array": true,
+        "name": "primitive_poses",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "meshes",
+        "type": "shape_msgs/Mesh"
+      },
+      {
+        "array": true,
+        "name": "mesh_poses",
+        "type": "geometry_msgs/Pose"
+      }
+    ]
+  },
+  "moveit_msgs/msg/CartesianPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "velocity",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": false,
+        "name": "acceleration",
+        "type": "geometry_msgs/Accel"
+      }
+    ]
+  },
+  "moveit_msgs/msg/CartesianTrajectory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "tracked_frame",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "CartesianTrajectoryPoint"
+      }
+    ]
+  },
+  "moveit_msgs/msg/CartesianTrajectoryPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "point",
+        "type": "CartesianPoint"
+      },
+      {
+        "array": false,
+        "name": "time_from_start",
+        "type": "builtin_interfaces/Duration"
+      }
+    ]
+  },
+  "moveit_msgs/msg/CollisionObject": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "object_recognition_msgs/ObjectType"
+      },
+      {
+        "array": true,
+        "name": "primitives",
+        "type": "shape_msgs/SolidPrimitive"
+      },
+      {
+        "array": true,
+        "name": "primitive_poses",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "meshes",
+        "type": "shape_msgs/Mesh"
+      },
+      {
+        "array": true,
+        "name": "mesh_poses",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "planes",
+        "type": "shape_msgs/Plane"
+      },
+      {
+        "array": true,
+        "name": "plane_poses",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "subframe_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "subframe_poses",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "operation",
+        "type": "byte"
+      }
+    ]
+  },
+  "moveit_msgs/msg/ConstraintEvalResult": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "result",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "distance",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/Constraints": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "joint_constraints",
+        "type": "JointConstraint"
+      },
+      {
+        "array": true,
+        "name": "position_constraints",
+        "type": "PositionConstraint"
+      },
+      {
+        "array": true,
+        "name": "orientation_constraints",
+        "type": "OrientationConstraint"
+      },
+      {
+        "array": true,
+        "name": "visibility_constraints",
+        "type": "VisibilityConstraint"
+      }
+    ]
+  },
+  "moveit_msgs/msg/ContactInformation": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": false,
+        "name": "normal",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "depth",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "contact_body_1",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "body_type_1",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "contact_body_2",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "body_type_2",
+        "type": "uint32"
+      }
+    ]
+  },
+  "moveit_msgs/msg/CostSource": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "cost_density",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "aabb_min",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "aabb_max",
+        "type": "geometry_msgs/Vector3"
+      }
+    ]
+  },
+  "moveit_msgs/msg/DisplayRobotState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "state",
+        "type": "RobotState"
+      },
+      {
+        "array": true,
+        "name": "highlight_links",
+        "type": "ObjectColor"
+      },
+      {
+        "array": false,
+        "name": "hide",
+        "type": "bool"
+      }
+    ]
+  },
+  "moveit_msgs/msg/DisplayTrajectory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "model_id",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "trajectory",
+        "type": "RobotTrajectory"
+      },
+      {
+        "array": false,
+        "name": "trajectory_start",
+        "type": "RobotState"
+      }
+    ]
+  },
+  "moveit_msgs/msg/GenericTrajectory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_trajectory",
+        "type": "trajectory_msgs/JointTrajectory"
+      },
+      {
+        "array": true,
+        "name": "cartesian_trajectory",
+        "type": "moveit_msgs/CartesianTrajectory"
+      }
+    ]
+  },
+  "moveit_msgs/msg/Grasp": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pre_grasp_posture",
+        "type": "trajectory_msgs/JointTrajectory"
+      },
+      {
+        "array": false,
+        "name": "grasp_posture",
+        "type": "trajectory_msgs/JointTrajectory"
+      },
+      {
+        "array": false,
+        "name": "grasp_pose",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": false,
+        "name": "grasp_quality",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "pre_grasp_approach",
+        "type": "GripperTranslation"
+      },
+      {
+        "array": false,
+        "name": "post_grasp_retreat",
+        "type": "GripperTranslation"
+      },
+      {
+        "array": false,
+        "name": "post_place_retreat",
+        "type": "GripperTranslation"
+      },
+      {
+        "array": false,
+        "name": "max_contact_force",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "allowed_touch_objects",
+        "type": "string"
+      }
+    ]
+  },
+  "moveit_msgs/msg/GripperTranslation": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "direction",
+        "type": "geometry_msgs/Vector3Stamped"
+      },
+      {
+        "array": false,
+        "name": "desired_distance",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "min_distance",
+        "type": "float32"
+      }
+    ]
+  },
+  "moveit_msgs/msg/JointConstraint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "joint_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "tolerance_above",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "tolerance_below",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "weight",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/JointLimits": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "joint_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "has_position_limits",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "min_position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "has_velocity_limits",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "max_velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "has_acceleration_limits",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "max_acceleration",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "has_jerk_limits",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "max_jerk",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/KinematicSolverInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "limits",
+        "type": "moveit_msgs/JointLimits"
+      },
+      {
+        "array": true,
+        "name": "link_names",
+        "type": "string"
+      }
+    ]
+  },
+  "moveit_msgs/msg/LinkPadding": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "padding",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/LinkScale": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "scale",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MotionPlanDetailedResponse": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "trajectory_start",
+        "type": "RobotState"
+      },
+      {
+        "array": false,
+        "name": "group_name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "trajectory",
+        "type": "RobotTrajectory"
+      },
+      {
+        "array": true,
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "processing_time",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "error_code",
+        "type": "MoveItErrorCodes"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MotionPlanRequest": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "workspace_parameters",
+        "type": "WorkspaceParameters"
+      },
+      {
+        "array": false,
+        "name": "start_state",
+        "type": "RobotState"
+      },
+      {
+        "array": true,
+        "name": "goal_constraints",
+        "type": "Constraints"
+      },
+      {
+        "array": false,
+        "name": "path_constraints",
+        "type": "Constraints"
+      },
+      {
+        "array": false,
+        "name": "trajectory_constraints",
+        "type": "TrajectoryConstraints"
+      },
+      {
+        "array": true,
+        "name": "reference_trajectories",
+        "type": "GenericTrajectory"
+      },
+      {
+        "array": false,
+        "name": "pipeline_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "planner_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "group_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "num_planning_attempts",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "allowed_planning_time",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_velocity_scaling_factor",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_acceleration_scaling_factor",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "cartesian_speed_end_effector_link",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "max_cartesian_speed",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MotionPlanResponse": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "trajectory_start",
+        "type": "RobotState"
+      },
+      {
+        "array": false,
+        "name": "group_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "trajectory",
+        "type": "RobotTrajectory"
+      },
+      {
+        "array": false,
+        "name": "planning_time",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "error_code",
+        "type": "MoveItErrorCodes"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MotionSequenceItem": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "req",
+        "type": "MotionPlanRequest"
+      },
+      {
+        "array": false,
+        "name": "blend_radius",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MotionSequenceRequest": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "items",
+        "type": "MotionSequenceItem"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MotionSequenceResponse": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "error_code",
+        "type": "MoveItErrorCodes"
+      },
+      {
+        "array": false,
+        "name": "sequence_start",
+        "type": "RobotState"
+      },
+      {
+        "array": true,
+        "name": "planned_trajectories",
+        "type": "RobotTrajectory"
+      },
+      {
+        "array": false,
+        "name": "planning_time",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/MoveItErrorCodes": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "val",
+        "type": "int32"
+      }
+    ]
+  },
+  "moveit_msgs/msg/ObjectColor": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "color",
+        "type": "std_msgs/ColorRGBA"
+      }
+    ]
+  },
+  "moveit_msgs/msg/OrientationConstraint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "orientation",
+        "type": "geometry_msgs/Quaternion"
+      },
+      {
+        "array": false,
+        "name": "link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "absolute_x_axis_tolerance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "absolute_y_axis_tolerance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "absolute_z_axis_tolerance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "parameterization",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "weight",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/OrientedBoundingBox": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "extents",
+        "type": "geometry_msgs/Point32"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlaceLocation": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "post_place_posture",
+        "type": "trajectory_msgs/JointTrajectory"
+      },
+      {
+        "array": false,
+        "name": "place_pose",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": false,
+        "name": "quality",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "pre_place_approach",
+        "type": "GripperTranslation"
+      },
+      {
+        "array": false,
+        "name": "post_place_retreat",
+        "type": "GripperTranslation"
+      },
+      {
+        "array": true,
+        "name": "allowed_touch_objects",
+        "type": "string"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlannerInterfaceDescription": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pipeline_id",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "planner_ids",
+        "type": "string"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlannerParams": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "keys",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "values",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "descriptions",
+        "type": "string"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlanningOptions": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "planning_scene_diff",
+        "type": "PlanningScene"
+      },
+      {
+        "array": false,
+        "name": "plan_only",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "look_around",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "look_around_attempts",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "max_safe_execution_cost",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "replan",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "replan_attempts",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "replan_delay",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlanningScene": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "robot_state",
+        "type": "RobotState"
+      },
+      {
+        "array": false,
+        "name": "robot_model_name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "fixed_frame_transforms",
+        "type": "geometry_msgs/TransformStamped"
+      },
+      {
+        "array": false,
+        "name": "allowed_collision_matrix",
+        "type": "AllowedCollisionMatrix"
+      },
+      {
+        "array": true,
+        "name": "link_padding",
+        "type": "LinkPadding"
+      },
+      {
+        "array": true,
+        "name": "link_scale",
+        "type": "LinkScale"
+      },
+      {
+        "array": true,
+        "name": "object_colors",
+        "type": "ObjectColor"
+      },
+      {
+        "array": false,
+        "name": "world",
+        "type": "PlanningSceneWorld"
+      },
+      {
+        "array": false,
+        "name": "is_diff",
+        "type": "bool"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlanningSceneComponents": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "components",
+        "type": "uint32"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PlanningSceneWorld": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "collision_objects",
+        "type": "CollisionObject"
+      },
+      {
+        "array": false,
+        "name": "octomap",
+        "type": "octomap_msgs/OctomapWithPose"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PositionConstraint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "target_point_offset",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "constraint_region",
+        "type": "BoundingVolume"
+      },
+      {
+        "array": false,
+        "name": "weight",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/PositionIKRequest": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "group_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "robot_state",
+        "type": "moveit_msgs/RobotState"
+      },
+      {
+        "array": false,
+        "name": "constraints",
+        "type": "Constraints"
+      },
+      {
+        "array": false,
+        "name": "avoid_collisions",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "ik_link_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose_stamped",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": true,
+        "name": "ik_link_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "pose_stamped_vector",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": false,
+        "name": "timeout",
+        "type": "builtin_interfaces/Duration"
+      }
+    ]
+  },
+  "moveit_msgs/msg/RobotState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "joint_state",
+        "type": "sensor_msgs/JointState"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_joint_state",
+        "type": "sensor_msgs/MultiDOFJointState"
+      },
+      {
+        "array": true,
+        "name": "attached_collision_objects",
+        "type": "AttachedCollisionObject"
+      },
+      {
+        "array": false,
+        "name": "is_diff",
+        "type": "bool"
+      }
+    ]
+  },
+  "moveit_msgs/msg/RobotTrajectory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "joint_trajectory",
+        "type": "trajectory_msgs/JointTrajectory"
+      },
+      {
+        "array": false,
+        "name": "multi_dof_joint_trajectory",
+        "type": "trajectory_msgs/MultiDOFJointTrajectory"
+      }
+    ]
+  },
+  "moveit_msgs/msg/TrajectoryConstraints": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "constraints",
+        "type": "Constraints"
+      }
+    ]
+  },
+  "moveit_msgs/msg/VisibilityConstraint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "target_radius",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "target_pose",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": false,
+        "name": "cone_sides",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "sensor_pose",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": false,
+        "name": "max_view_angle",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_range_angle",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "sensor_view_direction",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "weight",
+        "type": "float64"
+      }
+    ]
+  },
+  "moveit_msgs/msg/WorkspaceParameters": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "min_corner",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "max_corner",
+        "type": "geometry_msgs/Vector3"
+      }
+    ]
+  },
+  "nav_msgs/msg/Goals": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "goals",
+        "type": "geometry_msgs/PoseStamped"
+      }
+    ]
+  },
+  "nav_msgs/msg/GridCells": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "cell_width",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "cell_height",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "cells",
+        "type": "geometry_msgs/Point"
+      }
+    ]
+  },
+  "nav_msgs/msg/MapMetaData": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "map_load_time",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "resolution",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "origin",
+        "type": "geometry_msgs/Pose"
+      }
+    ]
+  },
+  "nav_msgs/msg/OccupancyGrid": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "info",
+        "type": "MapMetaData"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int8"
+      }
+    ]
+  },
+  "nav_msgs/msg/Odometry": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "child_frame_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/PoseWithCovariance"
+      },
+      {
+        "array": false,
+        "name": "twist",
+        "type": "geometry_msgs/TwistWithCovariance"
+      }
+    ]
+  },
+  "nav_msgs/msg/Path": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "poses",
+        "type": "geometry_msgs/PoseStamped"
+      }
+    ]
+  },
+  "object_recognition_msgs/msg/ObjectInformation": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "ground_truth_mesh",
+        "type": "shape_msgs/Mesh"
+      },
+      {
+        "array": false,
+        "name": "ground_truth_point_cloud",
+        "type": "sensor_msgs/PointCloud2"
+      }
+    ]
+  },
+  "object_recognition_msgs/msg/ObjectType": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "db",
+        "type": "string"
+      }
+    ]
+  },
+  "object_recognition_msgs/msg/RecognizedObject": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "object_recognition_msgs/ObjectType"
+      },
+      {
+        "array": false,
+        "name": "confidence",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "point_clouds",
+        "type": "sensor_msgs/PointCloud2"
+      },
+      {
+        "array": false,
+        "name": "bounding_mesh",
+        "type": "shape_msgs/Mesh"
+      },
+      {
+        "array": true,
+        "name": "bounding_contours",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/PoseWithCovarianceStamped"
+      }
+    ]
+  },
+  "object_recognition_msgs/msg/RecognizedObjectArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "objects",
+        "type": "object_recognition_msgs/RecognizedObject"
+      },
+      {
+        "array": true,
+        "name": "cooccurrence",
+        "type": "float32"
+      }
+    ]
+  },
+  "object_recognition_msgs/msg/Table": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": true,
+        "name": "convex_hull",
+        "type": "geometry_msgs/Point"
+      }
+    ]
+  },
+  "object_recognition_msgs/msg/TableArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "tables",
+        "type": "object_recognition_msgs/Table"
+      }
+    ]
+  },
+  "octomap_msgs/msg/Octomap": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "binary",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "resolution",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int8"
+      }
+    ]
+  },
+  "octomap_msgs/msg/OctomapWithPose": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "origin",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "octomap",
+        "type": "octomap_msgs/Octomap"
+      }
+    ]
+  },
+  "qb_device_msgs/msg/ConnectionState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "devices",
+        "type": "qb_device_msgs/DeviceConnectionInfo"
+      }
+    ]
+  },
+  "qb_device_msgs/msg/DeviceConnectionInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "is_active",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "port",
+        "type": "string"
+      }
+    ]
+  },
+  "qb_device_msgs/msg/Info": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "serial_port",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "max_repeats",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "get_positions",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "get_currents",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "get_distinct_packages",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "set_commands",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "set_commands_async",
+        "type": "bool"
+      },
+      {
+        "array": true,
+        "name": "position_limits",
+        "type": "int32"
+      },
+      {
+        "array": true,
+        "name": "encoder_resolutions",
+        "type": "uint8"
+      }
+    ]
+  },
+  "qb_device_msgs/msg/ResourceData": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "effort",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "command",
+        "type": "float64"
+      }
+    ]
+  },
+  "qb_device_msgs/msg/State": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "actuators",
+        "type": "qb_device_msgs/ResourceData"
+      },
+      {
+        "array": true,
+        "name": "joints",
+        "type": "qb_device_msgs/ResourceData"
+      },
+      {
+        "array": false,
+        "name": "is_reliable",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "consecutive_failures",
+        "type": "int32"
+      }
+    ]
+  },
+  "qb_device_msgs/msg/StateStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "device_info",
+        "type": "qb_device_msgs/Info"
+      },
+      {
+        "array": false,
+        "name": "device_data",
+        "type": "qb_device_msgs/State"
+      }
+    ]
+  },
+  "qb_softhand_industry_msgs/msg/ConnectionState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "device",
+        "type": "qb_softhand_industry_msgs/DeviceConnectionInfo"
+      }
+    ]
+  },
+  "qb_softhand_industry_msgs/msg/DeviceConnectionInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "is_active",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "ip",
+        "type": "string"
+      }
+    ]
+  },
+  "qb_softhand_industry_msgs/msg/ResourceData": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "effort",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "command",
+        "type": "float64"
+      }
+    ]
+  },
+  "qb_softhand_industry_msgs/msg/State": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "actuator",
+        "type": "qb_softhand_industry_msgs/ResourceData"
+      }
+    ]
+  },
+  "qb_softhand_industry_msgs/msg/StateStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "device_data",
+        "type": "qb_softhand_industry_msgs/State"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/FloatingPointRange": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "from_value",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "to_value",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "step",
+        "type": "float64"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/IntegerRange": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "from_value",
+        "type": "int64"
+      },
+      {
+        "array": false,
+        "name": "to_value",
+        "type": "int64"
+      },
+      {
+        "array": false,
+        "name": "step",
+        "type": "uint64"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/ListParametersResult": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "prefixes",
+        "type": "string"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/Log": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "stamp",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "level",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "msg",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "file",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "function",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "line",
+        "type": "uint32"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/Parameter": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "value",
+        "type": "ParameterValue"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/ParameterDescriptor": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "additional_constraints",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "read_only",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "dynamic_typing",
+        "type": "bool"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/ParameterEvent": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "stamp",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "node",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "new_parameters",
+        "type": "Parameter"
+      },
+      {
+        "array": true,
+        "name": "changed_parameters",
+        "type": "Parameter"
+      },
+      {
+        "array": true,
+        "name": "deleted_parameters",
+        "type": "Parameter"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/ParameterEventDescriptors": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "new_parameters",
+        "type": "ParameterDescriptor"
+      },
+      {
+        "array": true,
+        "name": "changed_parameters",
+        "type": "ParameterDescriptor"
+      },
+      {
+        "array": true,
+        "name": "deleted_parameters",
+        "type": "ParameterDescriptor"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/ParameterType": {
+    "encoding_hint": "cdr",
+    "fields": []
+  },
+  "rcl_interfaces/msg/ParameterValue": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "bool_value",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "integer_value",
+        "type": "int64"
+      },
+      {
+        "array": false,
+        "name": "double_value",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "string_value",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "byte_array_value",
+        "type": "byte"
+      },
+      {
+        "array": true,
+        "name": "bool_array_value",
+        "type": "bool"
+      },
+      {
+        "array": true,
+        "name": "integer_array_value",
+        "type": "int64"
+      },
+      {
+        "array": true,
+        "name": "double_array_value",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "string_array_value",
+        "type": "string"
+      }
+    ]
+  },
+  "rcl_interfaces/msg/SetParametersResult": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "successful",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "reason",
+        "type": "string"
+      }
+    ]
+  },
+  "rmw_dds_common/msg/Gid": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "data",
+        "type": "char"
+      }
+    ]
+  },
+  "rmw_dds_common/msg/NodeEntitiesInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "reader_gid_seq",
+        "type": "Gid"
+      },
+      {
+        "array": true,
+        "name": "writer_gid_seq",
+        "type": "Gid"
+      }
+    ]
+  },
+  "rmw_dds_common/msg/ParticipantEntitiesInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "gid",
+        "type": "Gid"
+      },
+      {
+        "array": true,
+        "name": "node_entities_info_seq",
+        "type": "NodeEntitiesInfo"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Altimeter": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "vertical_position",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "vertical_velocity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "vertical_reference",
+        "type": "float64"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Contact": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "collision1",
+        "type": "ros_gz_interfaces/Entity"
+      },
+      {
+        "array": false,
+        "name": "collision2",
+        "type": "ros_gz_interfaces/Entity"
+      },
+      {
+        "array": true,
+        "name": "positions",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "normals",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "depths",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "wrenches",
+        "type": "ros_gz_interfaces/JointWrench"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Contacts": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "contacts",
+        "type": "ros_gz_interfaces/Contact"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Dataframe": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "src_address",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "dst_address",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "rssi",
+        "type": "float64"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Entity": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint64"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/EntityFactory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "allow_renaming",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "sdf",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "sdf_filename",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "clone_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "relative_to",
+        "type": "string"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/EntityWrench": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "entity",
+        "type": "ros_gz_interfaces/Entity"
+      },
+      {
+        "array": false,
+        "name": "wrench",
+        "type": "geometry_msgs/Wrench"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Float32Array": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "data",
+        "type": "float32"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/GuiCamera": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "view_controller",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "track",
+        "type": "TrackVisual"
+      },
+      {
+        "array": false,
+        "name": "projection_type",
+        "type": "string"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/JointWrench": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "body_1_name",
+        "type": "std_msgs/String"
+      },
+      {
+        "array": false,
+        "name": "body_1_id",
+        "type": "std_msgs/UInt32"
+      },
+      {
+        "array": false,
+        "name": "body_2_name",
+        "type": "std_msgs/String"
+      },
+      {
+        "array": false,
+        "name": "body_2_id",
+        "type": "std_msgs/UInt32"
+      },
+      {
+        "array": false,
+        "name": "body_1_wrench",
+        "type": "geometry_msgs/Wrench"
+      },
+      {
+        "array": false,
+        "name": "body_2_wrench",
+        "type": "geometry_msgs/Wrench"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/Light": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "diffuse",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "specular",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "attenuation_constant",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "attenuation_linear",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "attenuation_quadratic",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "direction",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "range",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "cast_shadows",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "spot_inner_angle",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "spot_outer_angle",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "spot_falloff",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "parent_id",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "intensity",
+        "type": "float32"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/MaterialColor": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "entity",
+        "type": "ros_gz_interfaces/Entity"
+      },
+      {
+        "array": false,
+        "name": "ambient",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "diffuse",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "specular",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "emissive",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "shininess",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "entity_match",
+        "type": "uint8"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/ParamVec": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "params",
+        "type": "rcl_interfaces/Parameter"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/SensorNoise": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "mean",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "stddev",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "bias_mean",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "bias_stddev",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "precision",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "dynamic_bias_stddev",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "dynamic_bias_correlation_time",
+        "type": "float64"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/StringVec": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "string"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/TrackVisual": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "inherit_orientation",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "min_dist",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "max_dist",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "is_static",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "use_model_frame",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "xyz",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "inherit_yaw",
+        "type": "bool"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/VideoRecord": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "start",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "stop",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "format",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "save_filename",
+        "type": "string"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/WorldControl": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "pause",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "step",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "multi_step",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "reset",
+        "type": "ros_gz_interfaces/WorldReset"
+      },
+      {
+        "array": false,
+        "name": "seed",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "run_to_sim_time",
+        "type": "builtin_interfaces/Time"
+      }
+    ]
+  },
+  "ros_gz_interfaces/msg/WorldReset": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "all",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "time_only",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "model_only",
+        "type": "bool"
+      }
+    ]
+  },
+  "rosgraph_msgs/msg/Clock": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "clock",
+        "type": "builtin_interfaces/Time"
+      }
+    ]
+  },
+  "sensor_msgs/msg/BatteryState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "voltage",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "temperature",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "current",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "charge",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "capacity",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "design_capacity",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "percentage",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "power_supply_status",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "power_supply_health",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "power_supply_technology",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "present",
+        "type": "bool"
+      },
+      {
+        "array": true,
+        "name": "cell_voltage",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "cell_temperature",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "serial_number",
+        "type": "string"
+      }
+    ]
+  },
+  "sensor_msgs/msg/CameraInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "distortion_model",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "d",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "k",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "r",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "p",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "binning_x",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "binning_y",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "roi",
+        "type": "RegionOfInterest"
+      }
+    ]
+  },
+  "sensor_msgs/msg/ChannelFloat32": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "values",
+        "type": "float32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/CompressedImage": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "format",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint8"
+      }
+    ]
+  },
+  "sensor_msgs/msg/FluidPressure": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "fluid_pressure",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "variance",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/Illuminance": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "illuminance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "variance",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/Image": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "encoding",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "is_bigendian",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "step",
+        "type": "uint32"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint8"
+      }
+    ]
+  },
+  "sensor_msgs/msg/Imu": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "orientation",
+        "type": "geometry_msgs/Quaternion"
+      },
+      {
+        "array": true,
+        "name": "orientation_covariance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "angular_velocity",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "angular_velocity_covariance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "linear_acceleration",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "linear_acceleration_covariance",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/JointState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "position",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "velocity",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "effort",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/Joy": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "axes",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "buttons",
+        "type": "int32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/JoyFeedback": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "intensity",
+        "type": "float32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/JoyFeedbackArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "array",
+        "type": "JoyFeedback"
+      }
+    ]
+  },
+  "sensor_msgs/msg/LaserEcho": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "echoes",
+        "type": "float32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/LaserScan": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "angle_min",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "angle_max",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "angle_increment",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "time_increment",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "scan_time",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "range_min",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "range_max",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "ranges",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "intensities",
+        "type": "float32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/MagneticField": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "magnetic_field",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": true,
+        "name": "magnetic_field_covariance",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/MultiDOFJointState": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "transforms",
+        "type": "geometry_msgs/Transform"
+      },
+      {
+        "array": true,
+        "name": "twist",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": true,
+        "name": "wrench",
+        "type": "geometry_msgs/Wrench"
+      }
+    ]
+  },
+  "sensor_msgs/msg/MultiEchoLaserScan": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "angle_min",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "angle_max",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "angle_increment",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "time_increment",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "scan_time",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "range_min",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "range_max",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "ranges",
+        "type": "LaserEcho"
+      },
+      {
+        "array": true,
+        "name": "intensities",
+        "type": "LaserEcho"
+      }
+    ]
+  },
+  "sensor_msgs/msg/NavSatFix": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "status",
+        "type": "NavSatStatus"
+      },
+      {
+        "array": false,
+        "name": "latitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "longitude",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "altitude",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "position_covariance",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "position_covariance_type",
+        "type": "uint8"
+      }
+    ]
+  },
+  "sensor_msgs/msg/NavSatStatus": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "status",
+        "type": "int8"
+      },
+      {
+        "array": false,
+        "name": "service",
+        "type": "uint16"
+      }
+    ]
+  },
+  "sensor_msgs/msg/PointCloud": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "geometry_msgs/Point32"
+      },
+      {
+        "array": true,
+        "name": "channels",
+        "type": "ChannelFloat32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/PointCloud2": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "uint32"
+      },
+      {
+        "array": true,
+        "name": "fields",
+        "type": "PointField"
+      },
+      {
+        "array": false,
+        "name": "is_bigendian",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "point_step",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "row_step",
+        "type": "uint32"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "is_dense",
+        "type": "bool"
+      }
+    ]
+  },
+  "sensor_msgs/msg/PointField": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "offset",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "datatype",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "count",
+        "type": "uint32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/Range": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "radiation_type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "field_of_view",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "min_range",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "max_range",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "range",
+        "type": "float32"
+      }
+    ]
+  },
+  "sensor_msgs/msg/RegionOfInterest": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x_offset",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "y_offset",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "height",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "width",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "do_rectify",
+        "type": "bool"
+      }
+    ]
+  },
+  "sensor_msgs/msg/RelativeHumidity": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "relative_humidity",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "variance",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/Temperature": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "temperature",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "variance",
+        "type": "float64"
+      }
+    ]
+  },
+  "sensor_msgs/msg/TimeReference": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "time_ref",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "source",
+        "type": "string"
+      }
+    ]
+  },
+  "shape_msgs/msg/Mesh": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "triangles",
+        "type": "MeshTriangle"
+      },
+      {
+        "array": true,
+        "name": "vertices",
+        "type": "geometry_msgs/Point"
+      }
+    ]
+  },
+  "shape_msgs/msg/MeshTriangle": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "vertex_indices",
+        "type": "uint32"
+      }
+    ]
+  },
+  "shape_msgs/msg/Plane": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "coef",
+        "type": "float64"
+      }
+    ]
+  },
+  "shape_msgs/msg/SolidPrimitive": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "polygon",
+        "type": "geometry_msgs/Polygon"
+      }
+    ]
+  },
+  "statistics_msgs/msg/MetricsMessage": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "measurement_source_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "metrics_source",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "unit",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "window_start",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "window_stop",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": true,
+        "name": "statistics",
+        "type": "StatisticDataPoint"
+      }
+    ]
+  },
+  "statistics_msgs/msg/StatisticDataPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data_type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "data",
+        "type": "float64"
+      }
+    ]
+  },
+  "statistics_msgs/msg/StatisticDataType": {
+    "encoding_hint": "cdr",
+    "fields": []
+  },
+  "std_msgs/msg/Bool": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "bool"
+      }
+    ]
+  },
+  "std_msgs/msg/Byte": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "byte"
+      }
+    ]
+  },
+  "std_msgs/msg/ByteMultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "byte"
+      }
+    ]
+  },
+  "std_msgs/msg/Char": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "char"
+      }
+    ]
+  },
+  "std_msgs/msg/ColorRGBA": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "r",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "g",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "b",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "a",
+        "type": "float32"
+      }
+    ]
+  },
+  "std_msgs/msg/Empty": {
+    "encoding_hint": "cdr",
+    "fields": []
+  },
+  "std_msgs/msg/Float32": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "float32"
+      }
+    ]
+  },
+  "std_msgs/msg/Float32MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "float32"
+      }
+    ]
+  },
+  "std_msgs/msg/Float64": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "float64"
+      }
+    ]
+  },
+  "std_msgs/msg/Float64MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "float64"
+      }
+    ]
+  },
+  "std_msgs/msg/Header": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "stamp",
+        "type": "builtin_interfaces/Time"
+      },
+      {
+        "array": false,
+        "name": "frame_id",
+        "type": "string"
+      }
+    ]
+  },
+  "std_msgs/msg/Int16": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "int16"
+      }
+    ]
+  },
+  "std_msgs/msg/Int16MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int16"
+      }
+    ]
+  },
+  "std_msgs/msg/Int32": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "int32"
+      }
+    ]
+  },
+  "std_msgs/msg/Int32MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int32"
+      }
+    ]
+  },
+  "std_msgs/msg/Int64": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "int64"
+      }
+    ]
+  },
+  "std_msgs/msg/Int64MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int64"
+      }
+    ]
+  },
+  "std_msgs/msg/Int8": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "int8"
+      }
+    ]
+  },
+  "std_msgs/msg/Int8MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "int8"
+      }
+    ]
+  },
+  "std_msgs/msg/MultiArrayDimension": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "size",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "stride",
+        "type": "uint32"
+      }
+    ]
+  },
+  "std_msgs/msg/MultiArrayLayout": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "dim",
+        "type": "MultiArrayDimension"
+      },
+      {
+        "array": false,
+        "name": "data_offset",
+        "type": "uint32"
+      }
+    ]
+  },
+  "std_msgs/msg/String": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "string"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt16": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "uint16"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt16MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint16"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt32": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "uint32"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt32MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint32"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt64": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "uint64"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt64MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint64"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt8": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "data",
+        "type": "uint8"
+      }
+    ]
+  },
+  "std_msgs/msg/UInt8MultiArray": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "layout",
+        "type": "MultiArrayLayout"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint8"
+      }
+    ]
+  },
+  "stereo_msgs/msg/DisparityImage": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "image",
+        "type": "sensor_msgs/Image"
+      },
+      {
+        "array": false,
+        "name": "f",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "t",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "valid_window",
+        "type": "sensor_msgs/RegionOfInterest"
+      },
+      {
+        "array": false,
+        "name": "min_disparity",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "max_disparity",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "delta_d",
+        "type": "float32"
+      }
+    ]
+  },
+  "tf2_msgs/msg/TF2Error": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "error",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "error_string",
+        "type": "string"
+      }
+    ]
+  },
+  "tf2_msgs/msg/TFMessage": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "transforms",
+        "type": "geometry_msgs/TransformStamped"
+      }
+    ]
+  },
+  "trajectory_msgs/msg/JointTrajectory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "JointTrajectoryPoint"
+      }
+    ]
+  },
+  "trajectory_msgs/msg/JointTrajectoryPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "positions",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "velocities",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "accelerations",
+        "type": "float64"
+      },
+      {
+        "array": true,
+        "name": "effort",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "time_from_start",
+        "type": "builtin_interfaces/Duration"
+      }
+    ]
+  },
+  "trajectory_msgs/msg/MultiDOFJointTrajectory": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "joint_names",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "MultiDOFJointTrajectoryPoint"
+      }
+    ]
+  },
+  "trajectory_msgs/msg/MultiDOFJointTrajectoryPoint": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "transforms",
+        "type": "geometry_msgs/Transform"
+      },
+      {
+        "array": true,
+        "name": "velocities",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": true,
+        "name": "accelerations",
+        "type": "geometry_msgs/Twist"
+      },
+      {
+        "array": false,
+        "name": "time_from_start",
+        "type": "builtin_interfaces/Duration"
+      }
+    ]
+  },
+  "turtlesim/msg/Color": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "r",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "g",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "b",
+        "type": "uint8"
+      }
+    ]
+  },
+  "turtlesim/msg/Pose": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "theta",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "linear_velocity",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "angular_velocity",
+        "type": "float32"
+      }
+    ]
+  },
+  "unique_identifier_msgs/msg/UUID": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": true,
+        "name": "uuid",
+        "type": "uint8"
+      }
+    ]
+  },
+  "vision_msgs/msg/BoundingBox2D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "center",
+        "type": "vision_msgs/Pose2D"
+      },
+      {
+        "array": false,
+        "name": "size_x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "size_y",
+        "type": "float64"
+      }
+    ]
+  },
+  "vision_msgs/msg/BoundingBox2DArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "boxes",
+        "type": "vision_msgs/BoundingBox2D"
+      }
+    ]
+  },
+  "vision_msgs/msg/BoundingBox3D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "center",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "size",
+        "type": "geometry_msgs/Vector3"
+      }
+    ]
+  },
+  "vision_msgs/msg/BoundingBox3DArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "boxes",
+        "type": "vision_msgs/BoundingBox3D"
+      }
+    ]
+  },
+  "vision_msgs/msg/Classification": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "results",
+        "type": "ObjectHypothesis"
+      }
+    ]
+  },
+  "vision_msgs/msg/Detection2D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "results",
+        "type": "ObjectHypothesisWithPose"
+      },
+      {
+        "array": false,
+        "name": "bbox",
+        "type": "BoundingBox2D"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      }
+    ]
+  },
+  "vision_msgs/msg/Detection2DArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "detections",
+        "type": "Detection2D"
+      }
+    ]
+  },
+  "vision_msgs/msg/Detection3D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "results",
+        "type": "ObjectHypothesisWithPose"
+      },
+      {
+        "array": false,
+        "name": "bbox",
+        "type": "BoundingBox3D"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "string"
+      }
+    ]
+  },
+  "vision_msgs/msg/Detection3DArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "detections",
+        "type": "Detection3D"
+      }
+    ]
+  },
+  "vision_msgs/msg/LabelInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "class_map",
+        "type": "vision_msgs/VisionClass"
+      },
+      {
+        "array": false,
+        "name": "threshold",
+        "type": "float32"
+      }
+    ]
+  },
+  "vision_msgs/msg/ObjectHypothesis": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "class_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "score",
+        "type": "float64"
+      }
+    ]
+  },
+  "vision_msgs/msg/ObjectHypothesisWithPose": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "hypothesis",
+        "type": "ObjectHypothesis"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/PoseWithCovariance"
+      }
+    ]
+  },
+  "vision_msgs/msg/Point2D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "x",
+        "type": "float64"
+      },
+      {
+        "array": false,
+        "name": "y",
+        "type": "float64"
+      }
+    ]
+  },
+  "vision_msgs/msg/Pose2D": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "position",
+        "type": "vision_msgs/Point2D"
+      },
+      {
+        "array": false,
+        "name": "theta",
+        "type": "float64"
+      }
+    ]
+  },
+  "vision_msgs/msg/VisionClass": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "class_id",
+        "type": "uint16"
+      },
+      {
+        "array": false,
+        "name": "class_name",
+        "type": "string"
+      }
+    ]
+  },
+  "vision_msgs/msg/VisionInfo": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "method",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "database_location",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "database_version",
+        "type": "int32"
+      }
+    ]
+  },
+  "visualization_msgs/msg/ImageMarker": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "ns",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "action",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "position",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": false,
+        "name": "scale",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "outline_color",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "filled",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "fill_color",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "lifetime",
+        "type": "builtin_interfaces/Duration"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": true,
+        "name": "outline_colors",
+        "type": "std_msgs/ColorRGBA"
+      }
+    ]
+  },
+  "visualization_msgs/msg/InteractiveMarker": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "scale",
+        "type": "float32"
+      },
+      {
+        "array": true,
+        "name": "menu_entries",
+        "type": "MenuEntry"
+      },
+      {
+        "array": true,
+        "name": "controls",
+        "type": "InteractiveMarkerControl"
+      }
+    ]
+  },
+  "visualization_msgs/msg/InteractiveMarkerControl": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "orientation",
+        "type": "geometry_msgs/Quaternion"
+      },
+      {
+        "array": false,
+        "name": "orientation_mode",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "interaction_mode",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "always_visible",
+        "type": "bool"
+      },
+      {
+        "array": true,
+        "name": "markers",
+        "type": "Marker"
+      },
+      {
+        "array": false,
+        "name": "independent_marker_orientation",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "description",
+        "type": "string"
+      }
+    ]
+  },
+  "visualization_msgs/msg/InteractiveMarkerFeedback": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "client_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "marker_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "control_name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "event_type",
+        "type": "uint8"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "menu_entry_id",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "mouse_point",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": false,
+        "name": "mouse_point_valid",
+        "type": "bool"
+      }
+    ]
+  },
+  "visualization_msgs/msg/InteractiveMarkerInit": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "server_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "seq_num",
+        "type": "uint64"
+      },
+      {
+        "array": true,
+        "name": "markers",
+        "type": "InteractiveMarker"
+      }
+    ]
+  },
+  "visualization_msgs/msg/InteractiveMarkerPose": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      }
+    ]
+  },
+  "visualization_msgs/msg/InteractiveMarkerUpdate": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "server_id",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "seq_num",
+        "type": "uint64"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "uint8"
+      },
+      {
+        "array": true,
+        "name": "markers",
+        "type": "InteractiveMarker"
+      },
+      {
+        "array": true,
+        "name": "poses",
+        "type": "InteractiveMarkerPose"
+      },
+      {
+        "array": true,
+        "name": "erases",
+        "type": "string"
+      }
+    ]
+  },
+  "visualization_msgs/msg/Marker": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "ns",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "id",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "type",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "action",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/Pose"
+      },
+      {
+        "array": false,
+        "name": "scale",
+        "type": "geometry_msgs/Vector3"
+      },
+      {
+        "array": false,
+        "name": "color",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "lifetime",
+        "type": "builtin_interfaces/Duration"
+      },
+      {
+        "array": false,
+        "name": "frame_locked",
+        "type": "bool"
+      },
+      {
+        "array": true,
+        "name": "points",
+        "type": "geometry_msgs/Point"
+      },
+      {
+        "array": true,
+        "name": "colors",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "texture_resource",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "texture",
+        "type": "sensor_msgs/CompressedImage"
+      },
+      {
+        "array": true,
+        "name": "uv_coordinates",
+        "type": "UVCoordinate"
+      },
+      {
+        "array": false,
+        "name": "text",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "mesh_resource",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "mesh_file",
+        "type": "MeshFile"
+      },
+      {
+        "array": false,
+        "name": "mesh_use_embedded_materials",
+        "type": "bool"
+      }
+    ]
+  },
+  "visualization_msgs/msg/MarkerArray": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": true,
+        "name": "markers",
+        "type": "Marker"
+      }
+    ]
+  },
+  "visualization_msgs/msg/MenuEntry": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "parent_id",
+        "type": "uint32"
+      },
+      {
+        "array": false,
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "command",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "command_type",
+        "type": "uint8"
+      }
+    ]
+  },
+  "visualization_msgs/msg/MeshFile": {
+    "encoding_hint": "flat",
+    "fields": [
+      {
+        "array": false,
+        "name": "filename",
+        "type": "string"
+      },
+      {
+        "array": true,
+        "name": "data",
+        "type": "uint8"
+      }
+    ]
+  },
+  "visualization_msgs/msg/UVCoordinate": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "u",
+        "type": "float32"
+      },
+      {
+        "array": false,
+        "name": "v",
+        "type": "float32"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/BoolStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "data",
+        "type": "bool"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/CameraRecognitionObject": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "id",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "pose",
+        "type": "geometry_msgs/PoseStamped"
+      },
+      {
+        "array": false,
+        "name": "bbox",
+        "type": "vision_msgs/BoundingBox2D"
+      },
+      {
+        "array": true,
+        "name": "colors",
+        "type": "std_msgs/ColorRGBA"
+      },
+      {
+        "array": false,
+        "name": "model",
+        "type": "string"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/CameraRecognitionObjects": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": true,
+        "name": "objects",
+        "type": "CameraRecognitionObject"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/FloatStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "data",
+        "type": "float64"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/PenInkProperties": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "color",
+        "type": "int32"
+      },
+      {
+        "array": false,
+        "name": "density",
+        "type": "float32"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/StringStamped": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "header",
+        "type": "std_msgs/Header"
+      },
+      {
+        "array": false,
+        "name": "data",
+        "type": "string"
+      }
+    ]
+  },
+  "webots_ros2_msgs/msg/UrdfRobot": {
+    "encoding_hint": "cdr",
+    "fields": [
+      {
+        "array": false,
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "urdf_path",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "robot_description",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "relative_path_prefix",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "translation",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "rotation",
+        "type": "string"
+      },
+      {
+        "array": false,
+        "name": "normal",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "box_collision",
+        "type": "bool"
+      },
+      {
+        "array": false,
+        "name": "init_pos",
+        "type": "string"
+      }
+    ]
+  }
+}
