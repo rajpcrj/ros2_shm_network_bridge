@@ -1,6 +1,6 @@
 # PROMPT.md — Generic Type-Agnostic ROS 2 Shared-Memory Bridge
 
-This file is the working specification for the next phase of `ros2_shm_network_bridge`.
+This file is the working specification for the next phase of `ros2_shm_fanout`.
 It captures every decision made during design discussion, the constraints that are
 **hard limits** (not laziness — actual information-theoretic walls), and the exact
 on-disk formats so the C++ and Python sides stay byte-compatible.

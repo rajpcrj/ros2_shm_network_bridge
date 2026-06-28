@@ -1,6 +1,6 @@
 # HOW_IT_WAS_BUILT.md — the construction story
 
-This explains **how** `ros2_shm_network_bridge` was built — the reasoning, the
+This explains **how** `ros2_shm_fanout` was built — the reasoning, the
 order, the dead-ends ruled out, and how each piece fits. It is the "why/how"
 companion to `PROMPT.md` (the spec) and is not a run guide.
 

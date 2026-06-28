@@ -19,7 +19,7 @@ There are **two ways** to consume this library:
 ## A. Build as a ROS 2 package (colcon)
 
 ```bash
-cd /path/to/ros2_shm_network_bridge
+cd /path/to/ros2_shm_fanout
 source /opt/ros/humble/setup.bash
 colcon build --packages-select shm_bridge_cpp --cmake-args -DCMAKE_BUILD_TYPE=Release
 source install/setup.bash

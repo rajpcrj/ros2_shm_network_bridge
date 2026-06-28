@@ -1,4 +1,4 @@
-# ros2_shm_network_bridge
+# ros2_shm_fanout
 
 > **A same-host shared-memory transport for high-fan-out perception.**
 
@@ -90,6 +90,7 @@ array / a rebuilt ROS message; rendering is out of scope.
   - [6. Embed the library in your own app](#uc6-embed-the-library-in-your-own-app)
   - [7. Reproduce / extend the benchmarks](#uc7-reproduce--extend-the-benchmarks)
 - [Reference: every example & where to read more](#reference-every-example--where-to-read-more)
+- [Supported message types](#supported-message-types) — all 330 topic types (25 FLAT + 305 CDR)
 - [Why this beats plain ROS 2 here — DDS path vs the bypass](#why-this-beats-plain-ros-2-here--dds-path-vs-the-bypass)
 - [Packages & layout](#packages--layout)
 - [How it works (1 paragraph)](#how-it-works-1-paragraph)
@@ -102,6 +103,62 @@ array / a rebuilt ROS message; rendering is out of scope.
   [Python↔C++](docs/05_python_and_cpp_interop.md) · [modular core](docs/06_modular_core.md) ·
   [benchmarks](test_runs/README.md) · [examples](examples/README.md) ·
   [end-to-end pipeline](examples/end_to_end/README.md) · [prebuilt lib](prebuilt/README.md)
+
+---
+
+## Supported message types
+
+The bridge is **type-agnostic and covers every ROS 2 topic message type** — on this
+install (ROS Humble) that is **330 topic types**, via two encodings the reader
+dispatches automatically:
+
+| Encoding | Count | What | Reconstructed as |
+|---|---:|---|---|
+| **FLAT** (zero-copy) | **25** | heavy numeric buffers (image / cloud / grid / tensor) | numpy `ndarray` (zero-copy view) |
+| **CDR** (universal) | **305** | every other topic type — structs, nested, variable-length | rebuilt ROS message object |
+| **Total** | **330** | all topic message types | — |
+
+> **Adding a new type costs nothing.** CDR needs no per-type code — `serialize_message`
+> / `deserialize_message` handle all 305 generically; you just point a writer at the
+> topic. FLAT is an opt-in fast path with a small per-type extractor. The reader never
+> changes. (Service-only `srv/*_Request|Response.msg` types — 286 of them — are not
+> topic-publishable, so they are out of scope by definition.)
+
+**CDR streams are meant for ROS 2 consumers.** A CDR payload is the message's
+ROS-serialized form, so the natural consumer is another **ROS 2 node/package** that
+deserializes it straight back into a real ROS message (`deserialize_message`) — no
+type-specific code needed. **FLAT** streams, by contrast, are raw frame bytes and can
+be read by *any* `mmap`-capable consumer, ROS or not (a non-ROS Python process, a CUDA
+program, a model server).
+
+<details>
+<summary><b>The 25 FLAT (zero-copy) types</b></summary>
+
+```
+sensor_msgs/msg/Image                 sensor_msgs/msg/CompressedImage
+sensor_msgs/msg/PointCloud2           sensor_msgs/msg/PointCloud
+sensor_msgs/msg/LaserScan             sensor_msgs/msg/MultiEchoLaserScan
+stereo_msgs/msg/DisparityImage        nav_msgs/msg/OccupancyGrid
+map_msgs/msg/OccupancyGridUpdate      octomap_msgs/msg/Octomap
+visualization_msgs/msg/MeshFile       rmw_dds_common/msg/Gid
+ros_gz_interfaces/msg/Dataframe       ros_gz_interfaces/msg/Float32Array
+std_msgs/msg/ByteMultiArray           std_msgs/msg/UInt8MultiArray
+std_msgs/msg/Int8MultiArray           std_msgs/msg/UInt16MultiArray
+std_msgs/msg/Int16MultiArray          std_msgs/msg/UInt32MultiArray
+std_msgs/msg/Int32MultiArray          std_msgs/msg/UInt64MultiArray
+std_msgs/msg/Int64MultiArray          std_msgs/msg/Float32MultiArray
+std_msgs/msg/Float64MultiArray
+```
+Full lists: [HEAVY_FLAT.txt](src/message_type/HEAVY_FLAT.txt) ·
+[LIGHT_CDR.txt](src/message_type/LIGHT_CDR.txt) (the 305) ·
+[GENERAL_TOPIC.txt](src/message_type/GENERAL_TOPIC.txt) (all 330) ·
+[SERVICE_ONLY.txt](src/message_type/SERVICE_ONLY.txt) (286, out of scope).
+Regenerate for your own install: `python3 src/message_type/generate_index.py`.
+
+> C++ note: `ros2_to_shm_flat` provides typed FLAT for these except
+> `UInt64/Int64MultiArray` and `MultiEchoLaserScan`, which fall back to CDR (still
+> fully supported). The Python adapter handles all 25 as FLAT.
+</details>
 
 ---
 
@@ -121,6 +178,8 @@ regardless of reader count. Streams are `/dev/shm/<name>_{header,frame,recipe.js
 
 **Use the lib with zero build** (a clone ships a prebuilt x86-64 `.so` in `prebuilt/`):
 ```bash
+git clone https://github.com/rajpcrj/ros2_shm_fanout.git
+cd ros2_shm_fanout
 g++ -std=c++17 my.cpp -o my -Iprebuilt/include -Lprebuilt/lib -lshm_bridge_cpp -lpthread
 LD_LIBRARY_PATH=$PWD/prebuilt/lib ./my
 # or install it system-wide, then no -I/-L needed anywhere:
@@ -129,6 +188,8 @@ LD_LIBRARY_PATH=$PWD/prebuilt/lib ./my
 
 **Build from source** (ROS nodes + benchmarks):
 ```bash
+git clone https://github.com/rajpcrj/ros2_shm_fanout.git
+cd ros2_shm_fanout
 source /opt/ros/humble/setup.bash && colcon build --packages-select shm_bridge_cpp
 source install/setup.bash
 ```
@@ -203,11 +264,11 @@ put it in a standard folder, the compiler finds it automatically — no paths ne
 **Way 2 — don't install anything; point g++ at the files directly**:
 ```bash
 g++ -std=c++17 my_program.cpp -o my_program \
-    -I /full/path/to/ros2_shm_network_bridge/src/shm_bridge_cpp/include \
-    -L /full/path/to/ros2_shm_network_bridge/install/shm_bridge_cpp/lib \
+    -I /full/path/to/ros2_shm_fanout/src/shm_bridge_cpp/include \
+    -L /full/path/to/ros2_shm_fanout/install/shm_bridge_cpp/lib \
     -lshm_bridge_cpp -lpthread
 # and at RUN time, tell the program where the .so lives:
-export LD_LIBRARY_PATH=/full/path/to/ros2_shm_network_bridge/install/shm_bridge_cpp/lib
+export LD_LIBRARY_PATH=/full/path/to/ros2_shm_fanout/install/shm_bridge_cpp/lib
 ./my_program
 ```
 `-I` = "look here for headers (`.hpp`)". `-L` = "look here for libraries (`.so`)".
@@ -324,7 +385,7 @@ Python does **not** need to link the `.so`. It talks to the *same* `/dev/shm` fi
 using the bundled `shm_bridge_python` module — so Python and C++ freely read each
 other's data (verified both directions). First make Python find the module:
 ```bash
-export PYTHONPATH=/full/path/to/ros2_shm_network_bridge/src/shm_bridge_python:$PYTHONPATH
+export PYTHONPATH=/full/path/to/ros2_shm_fanout/src/shm_bridge_python:$PYTHONPATH
 ```
 
 - **A. ROS 2 both sides (Python):** use the ROS Python nodes:
