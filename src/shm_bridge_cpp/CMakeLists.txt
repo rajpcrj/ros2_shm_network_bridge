@@ -183,6 +183,67 @@ target_link_libraries(example_usage
 )
 
 # =========================
+# Benchmarks (single-process, perf_test-style; link libshm_bridge_cpp.so)
+# =========================
+# Bridge benchmark: pure library + futex, no ROS.
+add_executable(bridge_bench benchmark/bridge_bench.cpp)
+target_include_directories(bridge_bench PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/benchmark
+)
+target_link_libraries(bridge_bench shm_bridge_cpp pthread)
+
+# DDS benchmarks: rclcpp pub/sub, transport chosen by RMW at launch.
+add_executable(fastdds_bench benchmark/fastdds_bench.cpp)
+target_include_directories(fastdds_bench PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/benchmark)
+ament_target_dependencies(fastdds_bench rclcpp sensor_msgs)
+target_link_libraries(fastdds_bench pthread)
+
+add_executable(cyclonedds_bench benchmark/cyclonedds_bench.cpp)
+target_include_directories(cyclonedds_bench PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/benchmark)
+ament_target_dependencies(cyclonedds_bench rclcpp sensor_msgs)
+target_link_libraries(cyclonedds_bench pthread)
+
+# ----- test4: bridge with whole-system CPU accounting (FIX 1) + size-ladder (FIX 3) -----
+# DDS test4 binaries (FIX 2 loaned path) live in the loan_bench package because
+# they need the fixed-size shm_msgs/Image1m type.
+add_executable(bridge_bench4 benchmark/test4_benchmarks/bridge_bench4.cpp)
+target_include_directories(bridge_bench4 PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/benchmark
+  ${CMAKE_CURRENT_SOURCE_DIR}/benchmark/test4_benchmarks
+)
+ament_target_dependencies(bridge_bench4 rclcpp sensor_msgs)  # deserialize mode builds Image
+target_link_libraries(bridge_bench4 shm_bridge_cpp pthread)
+
+# =========================
+# Top-level examples/ programs (docs-facing, copy-paste starters).
+# The pure-library / POSIX ones (write_cpp, read_cpp, shm_to_network) build with
+# just the library; the ROS bridges (ros2_to_shm, shm_to_ros2) need rclcpp.
+# =========================
+set(EXAMPLES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../examples/cpp)
+
+add_executable(ex_write_cpp ${EXAMPLES_DIR}/write_cpp.cpp)
+target_link_libraries(ex_write_cpp shm_bridge_cpp pthread)
+
+add_executable(ex_read_cpp ${EXAMPLES_DIR}/read_cpp.cpp)
+target_link_libraries(ex_read_cpp shm_bridge_cpp pthread)
+
+add_executable(ex_shm_to_network ${EXAMPLES_DIR}/shm_to_network.cpp)
+target_link_libraries(ex_shm_to_network shm_bridge_cpp pthread)
+
+add_executable(ex_shm_to_udp ${EXAMPLES_DIR}/shm_to_udp.cpp)
+target_link_libraries(ex_shm_to_udp shm_bridge_cpp pthread)
+
+add_executable(ex_ros2_to_shm ${EXAMPLES_DIR}/ros2_to_shm.cpp)
+ament_target_dependencies(ex_ros2_to_shm rclcpp sensor_msgs)
+target_link_libraries(ex_ros2_to_shm shm_bridge_cpp pthread)
+
+add_executable(ex_shm_to_ros2 ${EXAMPLES_DIR}/shm_to_ros2.cpp)
+ament_target_dependencies(ex_shm_to_ros2 rclcpp sensor_msgs)
+target_link_libraries(ex_shm_to_ros2 shm_bridge_cpp pthread)
+
+# =========================
 # Install targets
 # =========================
 install(
@@ -194,6 +255,16 @@ install(
     ros2_to_shm
     ros2_to_shm_flat
     example_usage
+    bridge_bench
+    fastdds_bench
+    cyclonedds_bench
+    bridge_bench4
+    ex_write_cpp
+    ex_read_cpp
+    ex_shm_to_network
+    ex_shm_to_udp
+    ex_ros2_to_shm
+    ex_shm_to_ros2
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -53,6 +53,11 @@ public:
     bool write_cdr(const void* ptr, size_t len, const std::string& type_name,
                    const std::string& topic = "");
 
+    // Wake all readers blocked in Reader::wait() — one O(1) FUTEX_WAKE regardless
+    // of subscriber count. write_flat()/write_cdr() call this automatically after
+    // a successful publish; exposed for callers that build a header by hand.
+    void notify();
+
     size_t capacity() const;
 
 private:
@@ -69,6 +74,17 @@ public:
     // Returns true and fills `out` on a consistent (untorn) read; false otherwise.
     // Implements the seqlock read/re-read/retry protocol.
     bool read(Frame& out);
+
+    // Block (≈0% CPU) until a frame newer than the last one this Reader returned
+    // is available, then read it. Returns false on timeout (timeout_ns=0 waits
+    // forever). This replaces busy-polling: the writer's notify() does one
+    // FUTEX_WAKE that releases all waiting readers at once. Falls back to a short
+    // poll if the kernel wakes spuriously.
+    bool wait_and_read(Frame& out, uint64_t timeout_ns = 0);
+
+    // The seq of the last frame returned (0 if none yet) — exposed for callers
+    // that want to detect dropped frames (gaps in seq).
+    uint32_t last_seq() const;
 
 private:
     struct Impl;

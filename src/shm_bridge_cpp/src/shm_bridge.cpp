@@ -1,6 +1,7 @@
 // shm_bridge.cpp — implementation of the public library API (libshm_bridge_cpp.so).
 #include "shm_bridge_cpp/shm_bridge.hpp"
 #include "shm_bridge_cpp/shm_contract.hpp"
+#include "shm_bridge_cpp/shm_futex.hpp"
 
 #include <chrono>
 #include <cstring>
@@ -67,6 +68,7 @@ Writer::Writer(const std::string& name, size_t max_bytes) : p_(new Impl) {
 
 Writer::~Writer() { delete p_; }
 size_t Writer::capacity() const { return p_->cap; }
+void Writer::notify() { shm_futex::wake(p_->hdr); }   // O(1): one wake for all readers
 
 namespace {
 // seqlock publish: bump odd, copy payload + header, bump even.
@@ -110,7 +112,9 @@ bool Writer::write_flat(const void* ptr, size_t len, uint32_t width, uint32_t he
         save_recipe(p_->recipe_path, o.str());
         p_->last_key = key;
     }
-    return seqlock_write(p_->hdr, p_->frame, p_->cap, p_->seq, ptr, len, h);
+    bool ok = seqlock_write(p_->hdr, p_->frame, p_->cap, p_->seq, ptr, len, h);
+    if (ok) notify();                         // wake blocked readers (O(1))
+    return ok;
 }
 
 bool Writer::write_cdr(const void* ptr, size_t len, const std::string& type_name,
@@ -126,7 +130,9 @@ bool Writer::write_cdr(const void* ptr, size_t len, const std::string& type_name
         save_recipe(p_->recipe_path, o.str());
         p_->last_key = key;
     }
-    return seqlock_write(p_->hdr, p_->frame, p_->cap, p_->seq, ptr, len, h);
+    bool ok = seqlock_write(p_->hdr, p_->frame, p_->cap, p_->seq, ptr, len, h);
+    if (ok) notify();
+    return ok;
 }
 
 // ----------------------------- Reader -----------------------------
@@ -135,6 +141,7 @@ struct Reader::Impl {
     void* hdr = nullptr;
     void* frame = nullptr;
     size_t cap = 0;
+    uint32_t last_seq = 0;       // seq of the last frame returned to the caller
 };
 
 Reader::Reader(const std::string& name) : p_(new Impl) {
@@ -168,6 +175,7 @@ bool Reader::read(Frame& out) {
         out.dtype = static_cast<DType>(h.dtype_id);
         out.timestamp_ns = h.timestamp_ns;
         out.seq = h.seq;
+        p_->last_seq = h.seq;
         // full type name from recipe (header field is truncated to 24 bytes)
         std::string full = read_recipe_type(p_->recipe_path);
         out.type_name = full.empty()
@@ -176,6 +184,35 @@ bool Reader::read(Frame& out) {
         return true;
     }
     return false;
+}
+
+uint32_t Reader::last_seq() const { return p_->last_seq; }
+
+bool Reader::wait_and_read(Frame& out, uint64_t timeout_ns) {
+    // The seqlock word is even when a frame is stable. We sleep until it advances
+    // past the last EVEN seq we consumed. Block on (last_seq) — an even value —
+    // so the kernel only sleeps while *addr still equals it; any newer publish
+    // (odd then even) differs and either skips the sleep or wakes us via notify().
+    const uint64_t slice = timeout_ns ? timeout_ns : 50ull * 1000 * 1000;  // 50ms
+    uint64_t waited = 0;
+    for (;;) {
+        uint32_t cur = load_seq_acquire(p_->hdr);
+        // a new stable frame exists if the current seq is even and beyond ours,
+        // or odd (writer mid-write) and beyond — in both cases try to read.
+        if (cur != p_->last_seq && cur != (p_->last_seq | 1u)) {
+            if (read(out)) return true;        // got a fresh, untorn frame
+        }
+        // sleep until the word changes from what we last saw (cur), bounded.
+        shm_futex::wait(p_->hdr, cur, slice);
+        if (timeout_ns) {
+            waited += slice;
+            if (waited >= timeout_ns) {
+                // final attempt before giving up
+                if (load_seq_acquire(p_->hdr) != p_->last_seq && read(out)) return true;
+                return false;
+            }
+        }
+    }
 }
 
 }  // namespace shm_bridge
