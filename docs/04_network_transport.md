@@ -92,7 +92,7 @@ Multiple clients can subscribe at once; each gets the raw frames. (Verified
 end-to-end: SHM writer → `shm_to_udp` server → Python `udp_client` reassembles
 640×480×3 frames.)
 
-## Honest caveat
+## Caveat
 This is a *minimal* transport meant to demonstrate the lowest-latency path. It does
 not do congestion control, encryption, or retransmission. For production WAN use,
 put it behind a real protocol (QUIC/SRT/RTP) or run ROS 2 over a tuned DDS — but on

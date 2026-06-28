@@ -92,4 +92,4 @@ off one camera). **Don't** use it as a network transport by itself — it is loc
 only. For the cross-machine hop, see [`04_network_transport.md`](04_network_transport.md)
 (`shm_to_network.cpp`). For single-subscriber minimum latency, plain DDS data-sharing
 (loaned messages) is competitive or better — this bridge's win is CPU and scale,
-not single-reader latency. The benchmark write-up is the honest reference.
+not single-reader latency.

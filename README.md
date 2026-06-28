@@ -30,7 +30,7 @@ mattered for my pipeline, where some consumers lived outside ROS entirely and th
 standard transport couldn't reach them without bridging overhead.
 
 ### The findings
-Benchmarked honestly against the three production zero-copy transports — **FastDDS
+Benchmarked against the three production zero-copy transports — **FastDDS
 data-sharing, CycloneDDS+iceoryx, ros2_shm_msgs** — same payloads, **K=4 runs with
 variance**, whole-system (pid-set) CPU accounting. Full method + graphs:
 [test_runs/](test_runs/README.md).
@@ -41,7 +41,7 @@ variance**, whole-system (pid-set) CPU accounting. Full method + graphs:
   DDS's **~10 %/subscriber** — and it widens with subscriber count. At a realistic
   perception fan-out (**4–8 consumers**) it's already **~10–16× leaner**. *(This is
   lower CPU, not lower latency — at a single subscriber DDS-loaned can win latency;
-  see [Performance](#performance--comparison-honest).)*
+  see [Performance](#performance--comparison).)*
 - **Flat RAM.** Memory is **constant in the number of subscribers** (one physical
   copy, mapped by all) — RAM was unchanged from 1 to 64 consumers. Genuinely **O(1)**
   in subscriber count.
@@ -51,7 +51,7 @@ variance**, whole-system (pid-set) CPU accounting. Full method + graphs:
   exhaustion), and **ros2_shm_msgs segfaulted on an 8 MiB frame at a single
   subscriber**.
 
-> **Honest scope:** the win is **CPU + memory + delivery integrity at fan-out** on a
+> **Scope:** the win is **CPU + memory + delivery integrity at fan-out** on a
 > **single machine**, not single-subscriber latency and not a cross-machine transport.
 > See [when NOT to use it](#so-why-is-it-good-for-this-use-case) and the
 > [benchmark caveats](#how-the-benchmarking-was-performed) (intra-process, one-way
@@ -93,7 +93,7 @@ array / a rebuilt ROS message; rendering is out of scope.
 - [Why this beats plain ROS 2 here — DDS path vs the bypass](#why-this-beats-plain-ros-2-here--dds-path-vs-the-bypass)
 - [Packages & layout](#packages--layout)
 - [How it works (1 paragraph)](#how-it-works-1-paragraph)
-- [Performance & comparison (honest)](#performance--comparison-honest) — graphs, test machine
+- [Performance & comparison](#performance--comparison) — graphs, test machine
 - [How the benchmarking was performed](#how-the-benchmarking-was-performed) — method, files, why intra-process
 - [Requirements](#requirements) · [Architecture portability](#architecture-portability)
 - [More docs](#more-docs) · [License](#license)
@@ -366,7 +366,7 @@ O(N) but ~8× lower slope** than DDS (~1.2 %/sub vs ~10 %/sub).
 ros2 run shm_bridge_cpp ex_ros2_to_shm --ros-args -p topic:=/camera/image_raw -p stream:=cam
 # each consumer: shm_bridge::Reader r("cam"); r.wait_and_read(f);   (C++ or Python)
 ```
-→ scenario A, [docs/02](docs/02_cpp_api.md). Why it scales: [Performance](#performance--comparison-honest).
+→ scenario A, [docs/02](docs/02_cpp_api.md). Why it scales: [Performance](#performance--comparison).
 
 ### UC2. Feed a non-ROS program (inference / GUI / logger)
 *ROS produces the data, but the consumer is a plain C++/Python app you don't want to
@@ -511,7 +511,7 @@ so you can't deliver to N consumers for free — **but the per-subscriber consta
 ~8× smaller than DDS** (~1.2 %/sub vs ~10 %/sub). That is precisely UC1/UC2 above.
 Measured: ≈**8× lower CPU at 64 subscribers** (78 % of one core vs ~620 %), RAM flat
 across N=1→64, full rate with ~0 % loss while DDS falls behind
-([Performance](#performance--comparison-honest)).
+([Performance](#performance--comparison)).
 
 > **On complexity, precisely:** delivering to N readers is inherently Ω(N) work — N
 > readers each do a `FUTEX_WAIT` + read. So the bridge is **O(N) in CPU**, not O(1);
@@ -519,7 +519,7 @@ across N=1→64, full rate with ~0 % loss while DDS falls behind
 > genuinely O(1) in subscriber count. Don't let the strong RAM claim smuggle in a
 > false CPU claim — the real numbers (flat RAM, 8×-lower-slope CPU) are the result.
 
-**When NOT to reach for it (honest):** across machines (it's local-only — use the
+**When NOT to reach for it:** across machines (it's local-only — use the
 [network examples](docs/04_network_transport.md) or DDS), for tiny messages where the
 copy savings are negligible, or when you specifically need DDS features (reliability
 QoS, history, lifecycle, cross-vendor interop). The bridge is a **specialist for the
@@ -552,7 +552,7 @@ Full design: [docs/01_architecture.md](docs/01_architecture.md) and [PROMPT.md](
 
 ---
 
-## Performance & comparison (honest)
+## Performance & comparison
 
 > **Note (naming):** during development this system is referred to simply as **"the
 > bridge"** throughout the code, docs, and graphs. That is a working name — when this
@@ -584,8 +584,8 @@ leads because DDS becomes CPU-starved.
 ![Latency vs size, N=1](test_runs/graphs/latency_vs_size_n1.png)
 
 FastDDS-loaned is **flat in size** (true zero-copy pointer handoff). The bridge's
-read **copies** the bytes, so its latency is **O(size)**. This is stated honestly —
-the bridge does **not** win single-subscriber latency.
+read **copies** the bytes, so its latency is **O(size)** — the bridge does **not**
+win single-subscriber latency.
 
 ### Delivered rate vs subscribers — integrity under load
 ![FPS vs subscribers, 1 MiB](test_runs/graphs/fps_vs_subs_1m.png)
@@ -664,7 +664,7 @@ latency measurement valid without a round-trip relay or clock synchronization. T
 gives a clean, controlled, apples-to-apples **relative** comparison of the four
 transports under identical conditions.
 
-The honest cost of that choice is that intra-process **removes costs DDS pays in
+The cost of that choice is that intra-process **removes costs DDS pays in
 production** — participant discovery, per-process executor overhead, and cross-process
 wakeups. In other words, our setup is, if anything, **generous to DDS**: in a real
 inter-process deployment DDS would pay *more*, so the bridge's CPU/scalability

@@ -3,7 +3,7 @@
 Short answer: **you don't need to, and by default you shouldn't.** Python and C++
 interoperate through the **shared `/dev/shm` byte contract**, not by linking the
 library. But you *can* call the C++ classes from Python if you want — here are all
-three options, with honest trade-offs.
+three options, with their trade-offs.
 
 ---
 

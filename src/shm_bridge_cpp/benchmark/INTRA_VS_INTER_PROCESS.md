@@ -109,7 +109,7 @@ case, because DDS pays more there and the bridge pays roughly the same.
 ## 4. What our harness actually used, and why
 
 We used **intra-process** (1 process, 1 publisher thread + N subscriber threads).
-Reasons, honestly:
+Reasons:
 
 1. **It isolates the transport mechanism.** With everything in one process, the only
    variable is the publish/subscribe path; we removed inter-process scheduling noise

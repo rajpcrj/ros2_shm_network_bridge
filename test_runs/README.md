@@ -44,7 +44,7 @@ ROS 2 transport benchmark, plus standard latency-benchmark hygiene:
   **+ the iox-roudi daemon** for CycloneDDS), so DDS gets no free ride for work it
   offloads to a daemon, and the number is immune to unrelated desktop activity.
 - **Health gates**: a run is flagged/stopped if system CPU or RAM exceeds 95 %, a
-  subscriber is lost, or the process crashes — every such event is logged honestly
+  subscriber is lost, or the process crashes — every such event is logged
   in [`data/stops.log`](data/stops.log) rather than silently dropped.
 
 ---
@@ -111,7 +111,7 @@ the bridge still has headroom.
 **FastDDS-loaned is flat in size** (~0.15 ms at 1–8 MiB) because true zero-copy
 hands over a pointer — nothing is copied. The bridge's read **copies the bytes**, so
 its latency is **O(size)** (0.21 → 1.2 ms). This is the one axis where DDS-loaned is
-categorically better, and it's stated honestly.
+categorically better.
 
 ### Delivered rate vs subscribers (1 MiB) — integrity under load
 ![FPS vs subscribers, 1 MiB](graphs/fps_vs_subs_1m.png)
@@ -122,7 +122,7 @@ delivered rate (down to 13–25 fps) once CPU-bound; CycloneDDS **crashes at N=3
 
 ---
 
-## 5. Observed failure modes (honest)
+## 5. Observed failure modes
 
 From [`data/stops.log`](data/stops.log):
 - **CycloneDDS + iceoryx**: SIGABRT (`invalid allocator`) at **N=32** for 1m/2m, and

@@ -29,3 +29,6 @@ __pycache__/
 *_frame
 *_header
 *_recipe.json
+
+# generated from README.md by docs/readme_to_pdf.py
+README.pdf

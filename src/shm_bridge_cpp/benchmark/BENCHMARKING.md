@@ -42,7 +42,7 @@ Measurement model:
   Raw whole-system CPU and a pre-run idle floor are recorded as disclosed secondary
   columns.
 - **Health gates.** System CPU/RAM > 95 %, a lost subscriber, a crash, or a stall
-  are all logged honestly (`stops.log`) and stop only the affected transport.
+  are all logged (`stops.log`) and stop only the affected transport.
 - **Measurement overhead disclosed.** `measure_overhead_ns()` times the timestamp
   read/write loop so we know the noise floor of the instrument itself.
 
@@ -92,7 +92,7 @@ for specific reasons, each a deliberate trade-off:
   2×2.
 - **Daemon-fair CPU.** Our pid-set CPU counts `iox-roudi`. A naive per-process CPU
   read (what you'd get from many simple harnesses) would under-count CycloneDDS.
-- **Honest failure logging.** Crashes/gates/stalls are first-class outputs, not run
+- **Failure logging.** Crashes/gates/stalls are first-class outputs, not run
   failures to be retried away. The CycloneDDS N=32 crash and the 8 MiB segfault are
   *results*, not omissions.
 

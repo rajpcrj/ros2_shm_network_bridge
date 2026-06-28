@@ -96,7 +96,7 @@ SHM → UDP → SHM byte-for-byte, with the topic/type metadata preserved.)
 
 ---
 
-## Caveats (be honest with yourself)
+## Caveats
 
 - **UDP is best-effort.** Large frames are fragmented; if any fragment is lost, that
   frame is dropped (the next one still arrives). Fine for live sensor streams; for
