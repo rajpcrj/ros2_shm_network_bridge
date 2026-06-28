@@ -72,7 +72,7 @@ uses for its `Image`/`Array`/`PointCloud` ladders.
 Total grid: 4 sizes × 5 N × ~8 transport-modes × 4 runs ≈ **hundreds of runs,
 hundreds of thousands of individually-timed frames.**
 
-**Environment:** 12-core laptop, governor `powersave` (no sudo for `performance`),
+**Environment:** 8-core / 12-thread laptop (i5-13420H; 12 logical CPUs), governor `powersave` (no sudo for `performance`),
 turbo on. `powersave` inflates absolute milliseconds **equally** across all
 transports, so the comparison is fair; absolute numbers are conservative. Full
 environment snapshot: [`data/env.txt`](data/env.txt).

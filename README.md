@@ -563,8 +563,8 @@ Benchmarked head-to-head against **FastDDS** (data-sharing), **CycloneDDS**
 (+iceoryx), and **ros2_shm_msgs**, following **Apex.AI `performance_test`**
 methodology. Full methodology, image types/sizes, frame counts, and all graphs are
 in **[test_runs/README.md](test_runs/README.md)**; raw data in
-[test_runs/data/sweep.csv](test_runs/data/sweep.csv). 12-core laptop, 1–8 MiB
-image frames, 30 Hz, K=4 runs, mean ± std-dev.
+[test_runs/data/sweep.csv](test_runs/data/sweep.csv). 8-core / 12-thread laptop
+(i5-13420H), 1–8 MiB image frames, 30 Hz, K=4 runs, mean ± std-dev.
 
 ### CPU vs subscribers — the headline (same O(N), ~8× lower slope)
 ![CPU vs subscribers, 1 MiB](test_runs/graphs/cpu_vs_subs_1m.png)
